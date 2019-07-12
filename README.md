@@ -83,13 +83,20 @@ assertion library to test the payload.
 ```ts
 import { mockStore } from 'utils/test'
 
-it('dispatches ADD_TODO', () => {
-  const store = mockStore(/* initial state */)
-  const action = { type: 'ADD_TODO' }
+describe('todo actions', () => {
+  let store: ReturnType<typeof mockStore>
 
-  store.dispatch(action)
+  beforeEach(() => {
+    store = mockStore(/* initial state */)
+  })
 
-  expect(store.getActions()[0]).toBe(action)
+  it('dispatches ADD_TODO', () => {
+    const action = { type: 'ADD_TODO' }
+
+    store.dispatch(action)
+
+    expect(store.getActions()[0]).toBe(action)
+  })
 })
 ```
 
@@ -99,11 +106,10 @@ it('dispatches ADD_TODO', () => {
 it('asynchronously dispatches SUCCESS', async () => {
   const store = mockStore(/* initial state */)
   const success = { type: 'SUCCESS' }
-  const foo = () => async dispatch => {
-    dispatch(success)
-  }
 
-  await store.dispatch(foo())
+  await store.dispatch(async dispatch => {
+    dispatch(success)
+  })
 
   expect(store.getActions()[0]).toBe(success)
 })
