@@ -10,8 +10,9 @@
     "thunk",
     "test"
   ],
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/es2015/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/es2015/index.d.ts",
   "files": [
     "dist/*"
   ],
@@ -19,7 +20,9 @@
     "clean": "rimraf dist",
     "lint": "eslint src/**/*.ts",
     "prebuild": "npm run clean",
-    "build": "tsc",
+    "build": "run-p build:es2015 build:esm",
+    "build:es2015": "tsc --module es2015 --target es2015 --outDir dist/es2015",
+    "build:esm": "tsc --module es6 --target es6 --outDir dist/esm",
     "test": "jest --watch",
     "cover": "jest --coverage",
     "commit": "git-cz",
@@ -124,6 +127,7 @@
     "husky": "^3.0.4",
     "jest": "^24.9.0",
     "lint-staged": "^9.2.3",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
