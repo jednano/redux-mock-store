@@ -1,6 +1,6 @@
 # @jedmao/redux-mock-store
 
-[![Travis Build Status](https://img.shields.io/travis/com/jedmao/redux-mock-store.svg?style=popout-square&logo=travis)](https://travis-ci.com/jedmao/redux-mock-store)
+[![GitHub Actions](https://github.com/jedmao/storage/workflows/Node%20CI/badge.svg?event=push)](https://github.com/jedmao/storage/actions)
 [![codecov](https://img.shields.io/codecov/c/gh/jedmao/redux-mock-store.svg?style=popout-square&logo=codecov&token=4f79d0b1189f41e5a5ed32e87ca0a204)](https://codecov.io/gh/jedmao/redux-mock-store)
 [![npm version](https://img.shields.io/npm/v/@jedmao/redux-mock-store/latest.svg?style=popout-square&logo=npm)](https://www.npmjs.com/package/@jedmao/redux-mock-store)
 
@@ -41,7 +41,7 @@ common example would be to configure your store with a
 ### mockStore.js
 
 ```js
-import configureMockStore from '@jedmao/redux-mock-store'
+import { configureMockStore } from '@jedmao/redux-mock-store'
 import thunk from 'redux-thunk'
 
 const middlewares = [thunk]
@@ -54,7 +54,7 @@ Let's do the same thing in TypeScript and add an extra thunk argument.
 ### mockStore.ts
 
 ```ts
-import configureMockStore from '@jedmao/redux-mock-store'
+import { configureMockStore } from '@jedmao/redux-mock-store'
 import thunk, { ThunkDispatch } from 'redux-thunk'
 
 // internal dependencies

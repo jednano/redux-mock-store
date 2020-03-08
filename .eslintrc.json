@@ -1,8 +1,6 @@
 {
   "env": {
-    "es6": true,
-    "jest": true,
-    "node": true
+    "es6": true
   },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -10,15 +8,15 @@
       "impliedStrict": true
     },
     "ecmaVersion": 6,
-    "project": "./tsconfig.lint.json",
+    "project": "./tsconfig.json",
     "sourceType": "module",
     "tsconfigRootDir": "."
   },
   "plugins": ["prettier", "@typescript-eslint"],
   "extends": [
     "eslint:recommended",
-    "xo",
     "prettier",
+    "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   "rules": {
@@ -46,5 +44,17 @@
       }
     ],
     "@typescript-eslint/no-use-before-define": "off"
-  }
+  },
+  "overrides": [
+    {
+      "env": {
+        "node": true,
+        "jest": true
+      },
+      "files": "**/*.test.ts",
+      "rules": {
+        "@typescript-eslint/no-empty-function": "off"
+      }
+    }
+  ]
 }

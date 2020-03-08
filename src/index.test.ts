@@ -4,7 +4,7 @@
 import { Action, Store } from 'redux'
 import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'
 
-import configureMockStore from '.'
+import { configureMockStore } from '.'
 
 const FOO_REQUEST = 'FOO_REQUEST'
 type FooRequest = Action<typeof FOO_REQUEST>
@@ -36,16 +36,9 @@ type RootActions = FooRequest | FooSuccess | FooFailure
 const mockStore = configureMockStore<RootState, RootActions>()
 
 describe('@jedmao/redux-mock-store', () => {
-	it('exports a default function named "configureMockStore"', () => {
+	it('exports a function named "configureMockStore"', () => {
 		expect(typeof configureMockStore).toBe('function')
 		expect(configureMockStore.name).toBe('configureMockStore')
-	})
-
-	it('exports a cjs module with a circular default prop', () => {
-		const cjs = require('.')
-		expect(cjs).toBe(configureMockStore)
-		expect(cjs.default).toBe(cjs)
-		expect(cjs.default.default).toBe(cjs)
 	})
 
 	describe('getState', () => {

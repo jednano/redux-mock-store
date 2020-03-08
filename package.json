@@ -11,19 +11,25 @@
     "test"
   ],
   "main": "dist/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist/*"
+    "dist/index.js",
+    "dist/index.d.ts",
+    "dist/esm/index.js"
   ],
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf coverage dist *.log* redux-mock-store-*",
     "lint": "eslint src/**/*.ts",
-    "prebuild": "npm run clean",
-    "build": "tsc",
-    "test": "jest --watch",
+    "prebuild": "rimraf dist",
+    "build": "npm run build:cjs && npm run build:esm",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "precover": "rimraf coverage",
     "cover": "jest --coverage",
-    "commit": "git-cz",
-    "prepublishOnly": "npm run build"
+    "pretest": "npm run lint",
+    "test": "jest --watch",
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
@@ -53,13 +59,10 @@
   },
   "lint-staged": {
     "src/**/*.ts": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
+      "eslint --fix"
     ],
     "*.{json,md}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ],
     "src/**/*.{js,jsx}": [
       "git reset"
@@ -90,51 +93,47 @@
     ],
     "preset": "ts-jest"
   },
+  "release": {
+    "branch": "master",
+    "extends": "@jedmao/semantic-release-npm-github-config"
+  },
   "dependencies": {
-    "@queso/kebab-case": "^1.1.0",
-    "lodash.isfunction": "^3.0.9",
-    "lodash.isplainobject": "^4.0.6",
-    "ts-helpers": "^1.1.2"
+    "lodash.isfunction": "^3",
+    "lodash.isplainobject": "^4"
   },
   "peerDependencies": {
     "redux": "*"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.1.0",
-    "@commitlint/config-conventional": "^8.1.0",
-    "@jedmao/semantic-release-npm-github-config": "^1.0.6",
-    "@jedmao/tsconfig": "^0.3.0",
-    "@testing-library/react": "^9.1.3",
-    "@types/jest": "^24.0.18",
-    "@types/lodash.isfunction": "^3.0.6",
-    "@types/lodash.isplainobject": "^4.0.6",
-    "@types/node": "^12.7.2",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
-    "@types/redux": "^3.6.0",
-    "@types/redux-thunk": "^2.1.0",
-    "@typescript-eslint/eslint-plugin": "^2.0.0",
-    "@typescript-eslint/parser": "^2.0.0",
-    "commitizen": "^4.0.3",
-    "cz-conventional-changelog": "^3.0.2",
-    "eslint": "^6.2.1",
-    "eslint-config-prettier": "^6.1.0",
-    "eslint-config-xo": "^0.26.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "husky": "^3.0.4",
-    "jest": "^24.9.0",
-    "lint-staged": "^9.2.3",
-    "prettier": "^1.18.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "redux-thunk": "^2.3.0",
-    "rimraf": "^3.0.0",
-    "semantic-release": "^15.13.21",
-    "ts-jest": "^24.0.2",
-    "typescript": "^3.5.3"
-  },
-  "release": {
-    "branch": "master",
-    "extends": "@jedmao/semantic-release-npm-github-config"
+    "@commitlint/cli": "^8",
+    "@commitlint/config-conventional": "^8",
+    "@jedmao/semantic-release-npm-github-config": "^1",
+    "@testing-library/react": "^9",
+    "@types/jest": "^25",
+    "@types/lodash.isfunction": "^3",
+    "@types/lodash.isplainobject": "^4",
+    "@types/node": "^13",
+    "@types/react": "^16",
+    "@types/react-dom": "^16",
+    "@types/redux": "^3",
+    "@types/redux-thunk": "^2",
+    "@typescript-eslint/eslint-plugin": "^2.22",
+    "@typescript-eslint/parser": "^2.22",
+    "commitizen": "^4",
+    "cz-conventional-changelog": "^3",
+    "eslint": "^6",
+    "eslint-config-prettier": "^6",
+    "eslint-plugin-prettier": "^3",
+    "husky": "^4",
+    "jest": "^25",
+    "lint-staged": "^10",
+    "prettier": "^1",
+    "react": "^16",
+    "react-dom": "^16",
+    "redux-thunk": "^2",
+    "rimraf": "^3",
+    "semantic-release": "^17",
+    "ts-jest": "^25",
+    "typescript": "^3.8"
   }
 }

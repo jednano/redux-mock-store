@@ -8,7 +8,6 @@
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "noEmitHelpers": true,
-    "jsx": "react",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "commonjs",
     "moduleResolution": "node",
@@ -21,7 +20,7 @@
     "outDir": "dist",
     "resolveJsonModule": false,
     "skipLibCheck": true,
-    "target": "es2015"
+    "target": "ES2018"
   },
-  "include": ["src/index.ts"]
+  "include": ["src/**/*.ts"]
 }

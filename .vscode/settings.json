@@ -1,11 +1,16 @@
 {
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "files.associations": {
     ".eslintrc.json": "jsonc"
   },
   "search.exclude": {
-    "**/coverge": true,
+    "**/node_modules": true,
     "**/dist": true,
-    "**/node_modules": true
-  }
+    "**/coverge": true
+  },
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

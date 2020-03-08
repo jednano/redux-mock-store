@@ -16,7 +16,7 @@ import isPlainObject from 'lodash.isplainobject'
 /**
  * A mock store for testing Redux async action creators and middleware.
  */
-export default function configureMockStore<
+export function configureMockStore<
 	S = any,
 	A extends Action = AnyAction,
 	DispatchExts extends {} | void = void
@@ -140,6 +140,3 @@ export interface MockStore<S = any, A extends Action = AnyAction>
 	getActions(): A[]
 	subscribe(listener: (action: A) => void): Unsubscribe
 }
-
-// @ts-ignore
-module.exports = Object.assign(exports.default, exports)
