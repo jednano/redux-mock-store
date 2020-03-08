@@ -10,6 +10,7 @@ import {
 	StoreEnhancerStoreCreator,
 	Unsubscribe,
 } from 'redux'
+
 import isFunction from 'lodash.isfunction'
 import isPlainObject from 'lodash.isplainobject'
 
@@ -37,7 +38,7 @@ export function configureMockStore<
 
 		function creator(): MockStore<S, A> {
 			let actions: A[] = []
-			const listeners: ((action: A) => void)[] = []
+			const listeners: Array<(action: A) => void> = []
 
 			return {
 				getState() {

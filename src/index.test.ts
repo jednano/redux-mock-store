@@ -1,6 +1,3 @@
-/* eslint max-nested-callbacks: "off" */
-/* eslint @typescript-eslint/no-var-requires: "off" */
-/* eslint @typescript-eslint/no-unused-vars: "off" */
 import { Action, Store } from 'redux'
 import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'
 
@@ -257,7 +254,7 @@ describe('@jedmao/redux-mock-store', () => {
 		describe('using a redux-thunk middleware with <S, A, D> generics', () => {
 			const extraThunkArgument = { app: jest.fn() }
 			type MyThunkAction<R = void> = ThunkAction<
-				R,
+				Promise<R>,
 				RootState,
 				typeof extraThunkArgument,
 				RootActions

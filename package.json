@@ -44,7 +44,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "jest --coverage"
+      "pre-push": "tsc --noEmit && npm run cover"
     }
   },
   "commitlint": {
@@ -58,7 +58,7 @@
     }
   },
   "lint-staged": {
-    "src/**/*.ts": [
+    "*.{ts,tsx}": [
       "eslint --fix"
     ],
     "*.{json,md}": [
@@ -79,6 +79,9 @@
     "collectCoverageFrom": [
       "src/index.ts"
     ],
+    "testEnvironment": "node",
+    "verbose": true,
+    "coverageDirectory": "coverage",
     "coverageThreshold": {
       "global": {
         "statements": 100,
@@ -91,7 +94,11 @@
       "json",
       "lcov"
     ],
-    "preset": "ts-jest"
+    "preset": "ts-jest",
+    "watchPlugins": [
+      "jest-watch-typeahead/filename",
+      "jest-watch-typeahead/testname"
+    ]
   },
   "release": {
     "branch": "master",
@@ -102,7 +109,7 @@
     "lodash.isplainobject": "^4"
   },
   "peerDependencies": {
-    "redux": "*"
+    "redux": "^4"
   },
   "devDependencies": {
     "@commitlint/cli": "^8",
@@ -126,6 +133,7 @@
     "eslint-plugin-prettier": "^3",
     "husky": "^4",
     "jest": "^25",
+    "jest-watch-typeahead": "^0.4",
     "lint-staged": "^10",
     "prettier": "^1",
     "react": "^16",
