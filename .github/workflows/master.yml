@@ -11,6 +11,8 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
+
     strategy:
       matrix:
         node: [10, 12]
@@ -44,6 +46,7 @@ jobs:
     name: npm publish / GitHub release
     needs: test
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '[skip ci]')"
     steps:
       - name: Checkout
         uses: actions/checkout@v1
