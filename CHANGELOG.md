@@ -3,6 +3,19 @@
 All notable changes to this project will be documented in this file. See
 [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [3.0.0](https://github.com/jedmao/redux-mock-store/compare/v2.0.3...v3.0.0) (2020-03-08)
+
+
+### Features
+
+* provide esm build ([68f884b](https://github.com/jedmao/redux-mock-store/commit/68f884b))
+
+
+### BREAKING CHANGES
+
+* no default export. use `import { configureMockStore } from
+'@jedmao/redux-mock-store'`.
+
 ## [2.0.3](https://github.com/jedmao/redux-mock-store/compare/v2.0.2...v2.0.3) (2019-08-20)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@jedmao/redux-mock-store",
-  "version": "2.0.3",
+  "version": "3.0.0",
   "description": "A mock store for testing your redux async action creators and middleware",
   "keywords": [
     "react",
