@@ -135,7 +135,7 @@
     "jest": "^25",
     "jest-watch-typeahead": "^0.4",
     "lint-staged": "^10",
-    "prettier": "^1",
+    "prettier": "^2",
     "react": "^16",
     "react-dom": "^16",
     "redux-thunk": "^2",
