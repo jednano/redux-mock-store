@@ -11,8 +11,7 @@ import {
 	Unsubscribe,
 } from 'redux'
 
-import isFunction from 'lodash.isfunction'
-import isPlainObject from 'lodash.isplainobject'
+import { isFunction, isPlainObject } from './utils'
 
 /**
  * A mock store for testing Redux async action creators and middleware.
