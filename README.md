@@ -112,7 +112,7 @@ it('asynchronously dispatches SUCCESS', async () => {
 ```
 
 See
-[the tests](https://github.com/jedmao/redux-mock-store/blob/master/src/index.test.ts)
+[the tests](https://github.com/jedmao/redux-mock-store/blob/master/test/index.test.ts)
 for more thorough examples.
 
 ## API

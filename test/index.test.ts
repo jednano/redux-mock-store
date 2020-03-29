@@ -1,7 +1,7 @@
 import { Action, Store } from 'redux'
 import thunk, { ThunkAction, ThunkDispatch } from 'redux-thunk'
 
-import { configureMockStore } from '.'
+import { configureMockStore } from '../src'
 
 const FOO_REQUEST = 'FOO_REQUEST'
 type FooRequest = Action<typeof FOO_REQUEST>
