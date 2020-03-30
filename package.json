@@ -77,7 +77,7 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/index.ts"
+      "src/**/*.ts"
     ],
     "testEnvironment": "node",
     "verbose": true,
