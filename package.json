@@ -15,8 +15,11 @@
   "types": "dist/index.d.ts",
   "files": [
     "dist/index.js",
+    "dist/utils.js",
     "dist/index.d.ts",
-    "dist/esm/index.js"
+    "dist/utils.d.ts",
+    "dist/esm/index.js",
+    "dist/esm/utils.js"
   ],
   "scripts": {
     "clean": "rimraf coverage dist *.log* redux-mock-store-*",
