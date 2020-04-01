@@ -130,7 +130,7 @@
     "eslint-plugin-prettier": "^3",
     "husky": "^4",
     "jest": "^25",
-    "jest-watch-typeahead": "^0.4",
+    "jest-watch-typeahead": "^0.5",
     "lint-staged": "^10",
     "prettier": "^2",
     "react": "^16",
