@@ -112,7 +112,7 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^9",
-    "@commitlint/config-conventional": "^9",
+    "@commitlint/config-conventional": "^11",
     "@jedmao/semantic-release-npm-github-config": "^1",
     "@testing-library/react": "^10",
     "@types/jest": "^26",
