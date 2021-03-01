@@ -128,7 +128,7 @@
     "eslint": "^6",
     "eslint-config-prettier": "^6",
     "eslint-plugin-prettier": "^3",
-    "husky": "^4",
+    "husky": "^5",
     "jest": "^25",
     "jest-watch-typeahead": "^0.5",
     "lint-staged": "^10",
