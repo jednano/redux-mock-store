@@ -111,7 +111,7 @@
     "redux": "^4"
   },
   "devDependencies": {
-    "@commitlint/cli": "^11",
+    "@commitlint/cli": "^12",
     "@commitlint/config-conventional": "^12",
     "@jedmao/semantic-release-npm-github-config": "^1",
     "@testing-library/react": "^11",
