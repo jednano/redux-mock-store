@@ -131,7 +131,7 @@
     "husky": "^6",
     "jest": "^25",
     "jest-watch-typeahead": "^0.5",
-    "lint-staged": "^10",
+    "lint-staged": "^11",
     "prettier": "^2",
     "react": "^17",
     "react-dom": "^17",
