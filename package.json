@@ -114,7 +114,7 @@
     "@commitlint/cli": "^12",
     "@commitlint/config-conventional": "^12",
     "@jedmao/semantic-release-npm-github-config": "^1",
-    "@testing-library/react": "^11",
+    "@testing-library/react": "^12",
     "@types/jest": "^26",
     "@types/node": "^15",
     "@types/react": "^17",
